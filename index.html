@@ -3,35 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>小明｜前端工程師作品集</title>
+  <meta name="description" content="小明的前端工程師學習歷程與作品集，專注於現代網站開發、響應式設計與系統整合，持續精進技術能力與實戰經驗。" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; max-width: 100%; }
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", Arial, sans-serif; line-height: 1.6; }
-    img { max-width: 100%; height: auto; display: block; }
-    .container { width: 1920px; margin: 0 auto; padding: 16px; }
-    nav a { margin-right: 12px; text-decoration: none; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+    body {
+      font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; border-radius: 8px; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    header {
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    h1 { margin: 0; font-size: 28px; }
+    h2 { color: #38bdf8; }
+
+    section { margin: 56px 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
     .col-12 { grid-column: span 12; }
-    @media (min-width: 768px) { .col-md-6 { grid-column: span 6; } }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+
+    @media (min-width: 768px) {
+      .col-md-6 { grid-column: span 6; }
+      .col-md-4 { grid-column: span 4; }
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 16px;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* ⭐ Projects 強化 */
+    .projects-section {
+      background: #020617;
+      padding: 64px 0;
+    }
+
+    .projects-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .projects-title h2 {
+      font-size: 32px;
+    }
+
+    .projects-title p {
+      color: #94a3b8;
+    }
+
+    /* Contact 滿版 */
+    .full-width {
+      width: 100%;
+      background: linear-gradient(135deg, #1e293b, #020617);
+      padding: 60px 16px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #1e293b;
+      padding: 24px 0;
+    }
+
+    a { color: #60a5fa; }
   </style>
 </head>
-<body>
-  <header class="container" role="banner">
-    <nav aria-label="主選單">
-      <a href="#about">關於我</a>
-      <a href="#projects">作品集</a>
-      <a href="https://example.com/blog">技術部落格</a>
-      <a href="mailto:me@example.com">聯絡我</a>
-    </nav>
-    <h1>你好，我是小明：前端工程師新手之路</h1>
-    <h1>你好，我是小明：前端工程師新手之路</h1>
-    <p>歡迎來到我的個人網站！這裡整理了學習紀錄、Side Project 與實作心得。</p>
-  </header>
 
-  <footer class="container" role="contentinfo">
-    <p>© 2025 My Portfolio · <a href="#">GitHub</a></p>
-    <img src="https://source.unsplash.com/600x200/?technology,abstract" alt="">
-  </footer>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <h1>小明｜前端工程師</h1>
+
+    <nav aria-label="主選單">
+      <a href="#hero">首頁</a>
+      <a href="#about">關於我</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">作品</a>
+      <a href="#contact">聯絡我</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="container grid">
+    <div class="col-12 col-md-6">
+      <h2>打造科技感網站體驗</h2>
+      <p>專注於前端開發與系統整合。</p>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="科技開發畫面">
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <h2>關於我</h2>
+    <p>具備系統維運與跨部門整合經驗，目前專注於前端開發與 UI/UX 優化。</p>
+
+    <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80" alt="工程師工作環境">
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <h2>技能</h2>
+
+    <div class="grid">
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <h3>前端技術</h3>
+          <p>HTML、CSS、JavaScript、RWD</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <h3>工具</h3>
+          <p>Git、Docker、Linux</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <h3>整合能力</h3>
+          <p>系統串接與問題分析</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects 強化 -->
+<section id="projects" class="projects-section">
+  <div class="container">
+
+    <div class="projects-title">
+      <h2>作品集</h2>
+      <p>以下為近期實作專案與系統開發成果</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80" alt="網站設計專案">
+          <h3>個人網站</h3>
+          <p>響應式設計與 UI/UX 優化</p>
+          <a href="https://example.com/project1">查看</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="報修系統後台畫面">
+          <h3>報修系統</h3>
+          <p>內部流程管理系統</p>
+          <a href="https://example.com/project2">查看</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="full-width">
+  <h2>聯絡我</h2>
+  <p>歡迎合作或技術交流</p>
+  <a href="mailto:me@example.com">寄信給我</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 小明</p>
+  </div>
+</footer>
+
 </body>
 </html>
